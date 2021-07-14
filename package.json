@@ -22,7 +22,7 @@
   "scripts": {
     "start": "NODE_ENV=production node app.js",
     "test": "npm run lint",
-    "lint": "./node_modules/eslint/bin/eslint.js . --max-warnings=0 --report-unused-disable-directives && echo 'ESlint not detected problems, congrats!'"
+    "lint": "./node_modules/eslint/bin/eslint.js ./ && echo 'ESlint not detected problems, congrats!'"
   },
   "main": "app.js",
   "repository": {
