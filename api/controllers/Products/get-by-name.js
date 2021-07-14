@@ -17,6 +17,7 @@ module.exports = {
       headers,
       params: {
         string :productName,
+        // eslint-disable-next-line camelcase
         array_sucursales: SucursalesService.findSucursales({sucursales, distancia}),
         offset:0,
         sort:'-cant_sucursales_disponible',

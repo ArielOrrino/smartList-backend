@@ -7,8 +7,6 @@
  * For more information on configuring policies, check out:
  * https://sailsjs.com/docs/concepts/policies
  */
-const modules = ['validateRequest', 'generateRequestId', 'casSessionValidation', 'setTargetServer'];
-
 module.exports.policies = {
   '*': [
     'generateRequestId',
