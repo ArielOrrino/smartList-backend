@@ -1,6 +1,5 @@
 module.exports = {
 
-
   async fn(inputs, exits, env) {
     const {req, res} = env;
     const { query } = req;
@@ -25,6 +24,13 @@ module.exports = {
     if (err) {
       return res.ok(err);
     }
-    return res.ok(data.data);
+    const {sucursales: sucursalesResponse, sucursalesConProducto, producto} = data.data;
+    const sucursalesFiltradas = sucursalesResponse.filter((sucursal)=> !sucursal.message);
+    const response = {
+      sucursales: sucursalesFiltradas,
+      producto,
+      sucursalesConProducto
+    };
+    return res.ok(response);
   },
 };

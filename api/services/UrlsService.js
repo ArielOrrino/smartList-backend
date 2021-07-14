@@ -1,4 +1,5 @@
 const cloudfrontServer = 'https://d3e6htiiul5ek9.cloudfront.net';
+const locationServer = 'https://apis.datos.gob.ar';
 
 module.exports = {
   getProducts() {
@@ -14,5 +15,10 @@ module.exports = {
   getSucursales() {
     const segment = `/prod/sucursales`;
     return `${cloudfrontServer}${segment}`;
+  },
+
+  getLocation() {
+    const segment = `/georef/api/ubicacion`;
+    return `${locationServer}${segment}`;
   },
 };
