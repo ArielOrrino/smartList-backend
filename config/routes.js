@@ -43,4 +43,7 @@ module.exports.routes = {
   // Location
   'GET /location': 'Location/get',
 
+  // Health
+  'GET /health': 'health/get',
+
 };
