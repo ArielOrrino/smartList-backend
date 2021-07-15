@@ -75,8 +75,12 @@ module.exports.sockets = {
   * session cookie.                                                          *
   *                                                                          *
   ***************************************************************************/
-  onlyAllowOrigins: ['https://smartlistbackend2.scm.azurewebsites.net', 'https://smartlistbackend2.azurewebsites.net']
-  // grant3rdPartyCookie: true,
+  beforeConnect: function(handshake, cb) {
+    // `true` allows the connection
+    return cb(null, true);
+
+    // (`false` would reject the connection)
+  },  // grant3rdPartyCookie: true,
 
 
 };
