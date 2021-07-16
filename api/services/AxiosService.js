@@ -1,4 +1,4 @@
-const axios = require('axios');
+const axios = require('axios-https-proxy-fix');
 const qs = require('qs');
 
 const HEADERS = { 'Content-Type': 'application/json' };

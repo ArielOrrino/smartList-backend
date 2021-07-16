@@ -9,6 +9,7 @@
     "@sailshq/lodash": "^3.10.3",
     "@sailshq/socket.io-redis": "^5.2.0",
     "axios": "^0.21.1",
+    "axios-https-proxy-fix": "^0.17.1",
     "grunt": "1.0.4",
     "qs": "^6.10.1",
     "sails": "^1.4.0",
