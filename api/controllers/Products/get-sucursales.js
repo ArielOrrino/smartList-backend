@@ -24,10 +24,17 @@ module.exports = {
     };
     console.log('AxiosParams get-sucursales: ', axiosParams);
     const [err, data] = await ToService.promiseToAsync(AxiosService.get(axiosParams));
+    console.log('\x1b[31m');
+    console.log('**************************************************************');
+    console.log('\x1b[37m');
+    console.log('offers err: ', err);
+    console.log('offers data: ', data);
+    console.log('\x1b[31m');
+    console.log('**************************************************************');
+    console.log('\x1b[37m');
     if (err) {
       return res.ok(err);
     }
-    console.log('dataSucursales: ', data.data);
     return res.ok(data.data);
   },
 };
