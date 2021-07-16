@@ -27,6 +27,7 @@ module.exports = {
     if (err) {
       return res.ok(err);
     }
+    console.log('dataSucursales: ', data.data);
     return res.ok(data.data);
   },
 };
