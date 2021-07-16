@@ -25,8 +25,6 @@ module.exports = {
     console.log('AxiosParams get-sucursales: ', axiosParams);
     const [err, data] = await ToService.promiseToAsync(AxiosService.get(axiosParams));
     if (err) {
-      console.log('ERROR GET-SUCURSALES err.config.headers: ', err.config.headers);
-      console.log('ERROR GET-SUCURSALES: ', err.request.res.responseUrl);
       return res.ok(err);
     }
     return res.ok(data.data);
