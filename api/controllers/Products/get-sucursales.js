@@ -7,6 +7,7 @@ module.exports = {
     const { reqId } = res.options;
     const { lat, lng } = query;
     const limit = 3000;
+    delete req.headers.host;
     const headers = {
       ...req.headers,
       'user-agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36',
