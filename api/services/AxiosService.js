@@ -22,7 +22,7 @@ module.exports = {
             ),
     );
     if (err) {
-      RequestsService.setCurrentRequest(reqId, err.response);
+      // RequestsService.setCurrentRequest(reqId, err.response);
       throw err;
     }
     RequestsService.setCurrentRequest(reqId, data);
