@@ -25,7 +25,8 @@ module.exports = {
         limit,
       },
     };
-    const [err, data] = await ToService.promiseToAsync(AxiosService.get(axiosParams));
+    const useProxy=true;
+    const [err, data] = await ToService.promiseToAsync(AxiosService.get(axiosParams,useProxy));
     if (err) {
       return res.ok(err);
     }

@@ -19,8 +19,9 @@ module.exports = {
         limit
       },
     };
+    const useProxy=true;
     console.log('AxiosParams get-sucursales: ', axiosParams);
-    const [err, data] = await ToService.promiseToAsync(AxiosService.get(axiosParams));
+    const [err, data] = await ToService.promiseToAsync(AxiosService.get(axiosParams,useProxy));
     if (err) {
       return res.ok(err);
     }

@@ -5,8 +5,11 @@ const HEADERS = { 'Content-Type': 'application/json' };
 
 const paramsSerializer = (rawParams) => qs.stringify(rawParams, { arrayFormat: 'comma' });
 
+const PROXY_URL='195.55.94.74';
+const PROXY_PORT='8080';
+
 module.exports = {
-  async get(axiosParams) {
+  async get(axiosParams, useProxy=false) {
     const {
       url, params, reqId, headers,
     } = axiosParams;
@@ -16,10 +19,9 @@ module.exports = {
     }
     const mergedHeaders = JSON.parse(JSON.stringify({ ...HEADERS, ...headers }));
     const [err, data] = await ToService.promiseToAsync(
-            axios.get(
-                url,
-                { params, paramsSerializer, headers: mergedHeaders },
-            ),
+            axios.get(url, useProxy ?
+              { params, paramsSerializer, headers: mergedHeaders, proxy:{ host: PROXY_URL, port: PROXY_PORT}}
+              : { params, paramsSerializer, headers: mergedHeaders}),
     );
     if (err) {
       RequestsService.setCurrentRequest(reqId, err.response);
