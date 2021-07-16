@@ -31,6 +31,6 @@
   "author": "ariel",
   "license": "",
   "engines": {
-    "node": "14.17.3"
+    "node": "^12.18"
   }
 }
