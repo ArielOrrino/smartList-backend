@@ -9,7 +9,6 @@ module.exports = {
     const limit = 30;
     const headers = {
       'user-agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36',
-      'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'
     };
     const sucursales = JSON.parse(sucursalesString);
     const axiosParams = {
@@ -23,7 +22,16 @@ module.exports = {
       },
     };
     const useProxy=true;
+    console.log('axiosParams: ', axiosParams);
     const [err, data] = await ToService.promiseToAsync(AxiosService.get(axiosParams,useProxy));
+    console.log('\x1b[31m');
+    console.log('**************************************************************');
+    console.log('\x1b[37m');
+    console.log('products err: ', err);
+    console.log('products data: ', data);
+    console.log('\x1b[31m');
+    console.log('**************************************************************');
+    console.log('\x1b[37m');
     if (err) {
       return res.ok(err);
     }
