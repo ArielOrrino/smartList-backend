@@ -7,6 +7,7 @@ const paramsSerializer = (rawParams) => qs.stringify(rawParams, { arrayFormat: '
 
 const PROXY_URL='195.55.94.74';
 const PROXY_PORT='8080';
+const proxy = { host: PROXY_URL, port: PROXY_PORT};
 
 module.exports = {
   async get(axiosParams, useProxy=false) {
@@ -20,7 +21,7 @@ module.exports = {
     const mergedHeaders = JSON.parse(JSON.stringify({ ...HEADERS, ...headers }));
     const [err, data] = await ToService.promiseToAsync(
             axios.get(url, useProxy ?
-              { params, paramsSerializer, headers: mergedHeaders, proxy:{ host: PROXY_URL, port: PROXY_PORT}}
+              { params, paramsSerializer, headers: mergedHeaders, proxy}
               : { params, paramsSerializer, headers: mergedHeaders}),
     );
     if (err) {

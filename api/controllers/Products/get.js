@@ -22,16 +22,7 @@ module.exports = {
       },
     };
     const useProxy=true;
-    console.log('axiosParams: ', axiosParams);
     const [err, data] = await ToService.promiseToAsync(AxiosService.get(axiosParams,useProxy));
-    console.log('\x1b[31m');
-    console.log('**************************************************************');
-    console.log('\x1b[37m');
-    console.log('products err: ', err);
-    console.log('products data: ', data);
-    console.log('\x1b[31m');
-    console.log('**************************************************************');
-    console.log('\x1b[37m');
     if (err) {
       return res.ok(err);
     }
