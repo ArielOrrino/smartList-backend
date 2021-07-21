@@ -20,7 +20,7 @@ module.exports = {
     }
     const mergedHeaders = JSON.parse(JSON.stringify({ ...HEADERS, ...headers }));
     const [err, data] = await ToService.promiseToAsync(
-            axios.get(url, useProxy ?
+            axios.get(url, false ?
               { params, paramsSerializer, headers: mergedHeaders, proxy}
               : { params, paramsSerializer, headers: mergedHeaders}),
     );
