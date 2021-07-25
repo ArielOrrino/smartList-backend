@@ -6,6 +6,6 @@ module.exports = {
     const {res, req} = env;
     const { body } = req;
     const {name, lastName, email, password} = body;
-    return res.ok(UsersService.createUser({name, lastName, email, password}));
+    return res.ok(UsersService.createUser({name, lastName, email, password}, res));
   },
 };
