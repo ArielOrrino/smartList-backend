@@ -46,4 +46,7 @@ module.exports.routes = {
   // Health
   'GET /health': 'health/get',
 
+  // Health
+  'GET /all-users': 'Users/get-all',
+
 };
