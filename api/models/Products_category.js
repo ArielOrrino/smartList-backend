@@ -7,11 +7,11 @@
 
 module.exports = {
   datastore: 'default',
-  identity:'products_category',
+  identity:'ProductsCategory',
 
   attributes: {
 
-    id: { type: 'number', autoIncrement: true, },
+    id: { type: 'number', autoIncrement: true, unique: true},
     category: {type: 'string'}
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
