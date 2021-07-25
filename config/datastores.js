@@ -12,6 +12,7 @@
  * For more information on configuring datastores, check out:
  * https://sailsjs.com/config/datastores
  */
+const { DB_ADAPTER, DB_PROTOCOL, DB_URL, DB_USER, DB_PASSWORD, DB_PORT, DB_NAME } = process.env;
 
 module.exports.datastores = {
 
@@ -31,10 +32,9 @@ module.exports.datastores = {
   * (For production configuration, see `config/env/production.js`.)          *
   *                                                                          *
   ***************************************************************************/
-
   default: {
-    adapter: 'sails-mssql',
-    url: 'mssql://smartuser:Qaz11Qaz@smartlist2.database.windows.net:1433/smartlistdb',
+    adapter: DB_ADAPTER,
+    url: `${DB_PROTOCOL}://${DB_USER}:${DB_PASSWORD}@${DB_URL}:${DB_PORT}/${DB_NAME}`,
     options: {
       encrypt: true,   // use this for Azure databases
       enableArithAbort: true
