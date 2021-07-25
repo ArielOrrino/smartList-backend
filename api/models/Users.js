@@ -7,12 +7,18 @@
 
 module.exports = {
   datastore: 'default',
-  identity:'products_category',
+  identity:'users',
 
   attributes: {
 
     id: { type: 'number', autoIncrement: true, },
-    category: {type: 'string'}
+    name: {type: 'string'},
+    last_name: {type: 'string'},
+    email:{type: 'string'},
+    password:{type: 'string'},
+    created_at:{ type: 'number', autoCreatedAt: true, },
+    last_login:{ type: 'string', columnType: 'datetime' }
+
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝

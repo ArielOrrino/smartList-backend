@@ -7,12 +7,13 @@
 
 module.exports = {
   datastore: 'default',
-  identity:'products_category',
+  identity:'shopping_list',
 
   attributes: {
 
     id: { type: 'number', autoIncrement: true, },
-    category: {type: 'string'}
+    name: {type: 'string'},
+    generated_id: {type: 'string'},
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝

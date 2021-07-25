@@ -7,12 +7,17 @@
 
 module.exports = {
   datastore: 'default',
-  identity:'products_category',
+  identity:'shopping_lists',
 
   attributes: {
 
     id: { type: 'number', autoIncrement: true, },
-    category: {type: 'string'}
+    id_supermarket: {type: 'number'},
+    created_by: {type: 'number'},
+    updated_by: {type: 'number'},
+    created_at:{ type: 'number', autoCreatedAt: true, },
+    last_update:{ type: 'string', columnType: 'datetime' }
+
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝

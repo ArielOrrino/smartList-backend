@@ -15,9 +15,6 @@
 
 module.exports.models = {
   attributes: {
-    createdAt: { type: 'number', autoCreatedAt: true, },
-    updatedAt: { type: 'number', autoUpdatedAt: true, },
-    id: { type: 'number', autoIncrement: true, },
     //--------------------------------------------------------------------------
     //  /\   Using MongoDB?
     //  ||   Replace `id` above with this instead:
@@ -30,7 +27,7 @@ module.exports.models = {
     // https://sailsjs.com/docs/tutorials/using-mongo-db
     //--------------------------------------------------------------------------
   },
-  migrate: 'alter',
+  migrate: 'safe',
   dataEncryptionKeys: {
     default: 'eW0rrEtt9EoJyRT7eBlrUZ0p1q3NCcGuisayHjAaaE8='
   },
