@@ -8,11 +8,21 @@
 module.exports = {
   datastore: 'default',
   identity:'SharedShoppingListsUsers',
-
+  primaryKey: 'id',
   attributes: {
-    id: { type: 'number', autoIncrement: true,unique: true },
-    id_shoppingList: { type: 'number' },
-    id_user: {type: 'number'}
+    id: {
+      type: 'number',
+      autoIncrement: true,
+      unique: true
+    },
+    idShoppingList: {
+      type: 'number',
+      columnName: 'id_shoppingList'
+    },
+    idUser: {
+      type: 'number',
+      columnName: 'id_user'
+    }
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝

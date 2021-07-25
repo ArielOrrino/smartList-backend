@@ -8,18 +8,50 @@
 module.exports = {
   datastore: 'default',
   identity:'Items',
-
+  primaryKey: 'id',
   attributes: {
-    id: { type: 'number', autoIncrement: true, unique: true },
-    id_shoppingList: {type: 'number'},
-    id_product: {type: 'number'},
-    product_name: {type: 'string'},
-    product_price: {type: 'number'},
-    created_at :{ type: 'number', autoCreatedAt: true, },
-    last_product_price: {type: 'number'},
-    product_quantity: {type: 'number'},
-    id_category: {type: 'number'},
-    added_by: {type: 'number'},
+    id: {
+      type: 'number',
+      autoIncrement: true,
+      unique: true,
+    },
+    idShoppingList: {
+      type: 'number',
+      columnName: 'id_shoppingList'
+    },
+    idProduct: {
+      type: 'number',
+      columnName: 'id_product'
+    },
+    productName: {
+      type: 'string',
+      columnName: 'product_name'
+    },
+    productPrice: {
+      type: 'number',
+      columnName: 'product_price'
+    },
+    createdAt : {
+      type: 'number',
+      autoCreatedAt: true,
+      columnName: 'created_at'
+    },
+    lastProductPrice: {
+      type: 'number',
+      columnName: 'last_product_price'
+    },
+    productQuantity: {
+      type: 'number',
+      columnName: 'product_quantity'
+    },
+    idCategory: {
+      type: 'number',
+      columnName: 'id_category'
+    },
+    addedBy: {
+      type: 'number',
+      columnName: 'added_by'
+    },
 
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗

@@ -8,12 +8,21 @@
 module.exports = {
   datastore: 'default',
   identity:'ShoppingList',
-
+  primaryKey: 'id',
   attributes: {
 
-    id: { type: 'number', autoIncrement: true, unique: true},
-    name: {type: 'string'},
-    generated_id: {type: 'string'},
+    id: {
+      type: 'number',
+      autoIncrement: true,
+      unique: true
+    },
+    name: {
+      type: 'string'
+    },
+    generatedId: {
+      type: 'string',
+      columnName: 'generatedId'
+    },
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
