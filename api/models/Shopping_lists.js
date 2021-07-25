@@ -8,15 +8,36 @@
 module.exports = {
   datastore: 'default',
   identity:'ShoppingLists',
-
+  primaryKey: 'id',
   attributes: {
 
-    id: { type: 'number', autoIncrement: true, unique: true},
-    id_supermarket: {type: 'number'},
-    created_by: {type: 'number'},
-    updated_by: {type: 'number'},
-    created_at:{ type: 'number', autoCreatedAt: true, },
-    last_update:{ type: 'string', columnType: 'datetime' }
+    id: {
+      type: 'number',
+      autoIncrement: true,
+      unique: true,
+    },
+    idSupermarket: {
+      type: 'number',
+      columnName: 'id_supermarket'
+    },
+    createdBy: {
+      type: 'number',
+      columnName: 'created_by'
+    },
+    updatedBy: {
+      type: 'number',
+      columnName: 'updated_by'
+    },
+    createdAt:{
+      type: 'number',
+      autoCreatedAt: true,
+      columnName: 'created_at'
+    },
+    lastUpdate:{
+      type: 'string',
+      columnType: 'datetime',
+      columnName: 'last_update'
+    }
 
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
