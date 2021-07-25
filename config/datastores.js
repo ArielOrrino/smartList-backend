@@ -38,6 +38,7 @@ module.exports.datastores = {
     options: {
       encrypt: true,   // use this for Azure databases
       enableArithAbort: true
-    }
+    },
+    schemaName: 'dbo'
   },
 };
