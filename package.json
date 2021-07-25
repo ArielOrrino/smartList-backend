@@ -14,6 +14,7 @@
     "grunt": "1.0.4",
     "qs": "^6.10.1",
     "sails": "^1.4.0",
+    "sails-generate-models": "^1.3.0",
     "sails-hook-grunt": "^4.0.0",
     "sails-hook-orm": "^3.0.1",
     "sails-hook-sockets": "^2.0.0",
@@ -23,7 +24,7 @@
     "eslint": "^7.30.0"
   },
   "scripts": {
-    "start": "NODE_ENV=development node app.js"
+    "start": "node app.js"
   },
   "main": "app.js",
   "repository": {
