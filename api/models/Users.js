@@ -26,7 +26,6 @@ module.exports = {
     email:{
       type: 'string',
       isEmail: true,
-      unique: true,
       required: true
     },
     password:{
@@ -49,9 +48,9 @@ module.exports = {
     //many users,many lists
 
     shoppingLists:{
-      collection: 'Shopping_lists',
+      collection: 'ShoppingLists',
       via: 'users'
-    },
+    }
 
 
 

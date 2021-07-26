@@ -53,7 +53,7 @@ module.exports = {
    
     //one list,many items
     shoppingList: {
-      model: 'Shopping_lists'
+      model: 'ShoppingLists'
     }
 
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
