@@ -37,7 +37,25 @@ module.exports = {
       type: 'string',
       columnType: 'datetime',
       columnName: 'last_update'
-    }
+    },
+
+
+    //References
+
+    //one list, many items
+    items:{
+      collection: 'items',
+      via: 'shoppingList'
+    },
+
+    //many users, many lists
+
+    users:{
+      collection: 'users',
+      via: 'shoppingLists'
+    },
+
+
 
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗

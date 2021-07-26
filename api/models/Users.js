@@ -26,7 +26,6 @@ module.exports = {
     email:{
       type: 'string',
       isEmail: true,
-      unique: true,
       required: true
     },
     password:{
@@ -43,6 +42,17 @@ module.exports = {
       columnType: 'datetime',
       columnName: 'last_login'
     },
+
+    //References
+
+    //many users,many lists
+
+    shoppingLists:{
+      collection: 'ShoppingLists',
+      via: 'users'
+    }
+
+
 
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
