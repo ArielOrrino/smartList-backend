@@ -15,10 +15,6 @@ module.exports = {
       autoIncrement: true,
       unique: true,
     },
-    idShoppingList: {
-      type: 'number',
-      columnName: 'id_shoppingList'
-    },
     idProduct: {
       type: 'number',
       columnName: 'id_product'
@@ -52,6 +48,13 @@ module.exports = {
       type: 'number',
       columnName: 'added_by'
     },
+
+    //Reference
+   
+    //one list,many items
+    shoppingList: {
+      model: 'Shopping_lists'
+    }
 
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗

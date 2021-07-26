@@ -44,6 +44,17 @@ module.exports = {
       columnName: 'last_login'
     },
 
+    //References
+
+    //many users,many lists
+
+    shoppingLists:{
+      collection: 'Shopping_lists',
+      via: 'users'
+    },
+
+
+
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
