@@ -26,7 +26,9 @@ module.exports = {
     email:{
       type: 'string',
       isEmail: true,
-      required: true
+      required: true,
+      columnType: 'varchar(64)',
+      //unique:true,
     },
     password:{
       type: 'string',
@@ -34,12 +36,10 @@ module.exports = {
     },
     createdAt: {
       type: 'string',
-      columnType: 'datetime',
       columnName: 'created_at'
     },
     lastLogin: {
       type: 'string',
-      columnType: 'datetime',
       columnName: 'last_login'
     },
 

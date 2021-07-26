@@ -6,6 +6,10 @@ module.exports = {
     const {res, req} = env;
     const { body } = req;
     const {name, lastName, email, password} = body;
-    return res.ok(UsersService.createUser({name, lastName, email, password}, res));
+    const userCreated = await UsersService.createUser({name, lastName, email, password});
+    if (userCreated.error){
+      return res.serverError(userCreated);
+    }
+    return res.ok(userCreated);
   },
 };
