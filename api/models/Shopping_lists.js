@@ -16,6 +16,10 @@ module.exports = {
       autoIncrement: true,
       unique: true,
     },
+    name:{
+      type: 'string',
+      required: true,
+    },
     idSupermarket: {
       type: 'number',
       columnName: 'id_supermarket'
@@ -28,11 +32,11 @@ module.exports = {
       type: 'number',
       columnName: 'updated_by'
     },
-    createdAt:{
-      type: 'number',
-      autoCreatedAt: true,
-      columnName: 'created_at'
-    },
+    //createdAt:{
+    //  type: 'number',
+    //  autoCreatedAt: true,
+    //  columnName: 'created_at'
+    //},
     lastUpdate:{
       type: 'string',
       columnType: 'datetime',
@@ -53,7 +57,7 @@ module.exports = {
     users:{
       collection: 'users',
       via: 'shoppingLists'
-    },
+    }
 
 
 

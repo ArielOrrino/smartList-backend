@@ -51,4 +51,9 @@ module.exports.routes = {
   'GET /user': 'Users/get',
   'POST /user': 'Users/create',
 
+  //Shopping lists
+  'GET /all-shopping-lists': 'Shopping_lists/get-all',
+  'GET /shopping-list': 'Shopping_lists/get',
+  'POST /shopping-list': 'Shopping_lists/create',
+
 };
