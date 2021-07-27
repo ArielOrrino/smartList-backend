@@ -1,8 +1,24 @@
-const moment = require('moment');
-
 module.exports = {
-  findUser({email}) {
-    return Users.findOne({email});
+  async findUser({email}) {
+    let user;
+    try {
+      user = await Users.findOne({email});
+      if (!user) {
+        return {
+          message: 'user not exists',
+          error: true,
+          code:404,
+        };
+      }
+    } catch (err) {
+      return {
+        message: err,
+        error: true,
+        code:500,
+      };
+    }
+    delete user.password;
+    return user;
   },
 
   getAllUsers() {
