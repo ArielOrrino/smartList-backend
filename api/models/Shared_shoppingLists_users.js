@@ -10,11 +10,6 @@ module.exports = {
   identity:'SharedShoppingListsUsers',
   primaryKey: 'id',
   attributes: {
-    id: {
-      type: 'number',
-      autoIncrement: true,
-      unique: true
-    },
     idShoppingList: {
       type: 'number',
       columnName: 'id_shoppingList'

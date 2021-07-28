@@ -10,12 +10,6 @@ module.exports = {
   identity: 'Users',
   primaryKey: 'id',
   attributes: {
-
-    id: {
-      type: 'number',
-      autoIncrement: true,
-      unique: true
-    },
     name: {
       type: 'string'
     },
@@ -27,16 +21,12 @@ module.exports = {
       type: 'string',
       isEmail: true,
       required: true,
-      columnType: 'varchar(64)',
-      //unique:true,
+      maxLength: 64,
+      unique:true,
     },
     password:{
       type: 'string',
       required: true
-    },
-    createdAt: {
-      type: 'string',
-      columnName: 'created_at'
     },
     lastLogin: {
       type: 'string',

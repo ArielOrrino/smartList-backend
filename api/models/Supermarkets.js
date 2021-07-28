@@ -10,12 +10,6 @@ module.exports = {
   identity:'ShoppingList',
   primaryKey: 'id',
   attributes: {
-
-    id: {
-      type: 'number',
-      autoIncrement: true,
-      unique: true
-    },
     name: {
       type: 'string'
     },

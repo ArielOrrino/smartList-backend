@@ -134,3 +134,4 @@ lib-cov
 node_modules/*
 
 .editorconfig
+.env

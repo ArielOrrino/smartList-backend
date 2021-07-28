@@ -10,12 +10,6 @@ module.exports = {
   identity:'ProductsCategory',
   primaryKey: 'id',
   attributes: {
-
-    id: {
-      type: 'number',
-      autoIncrement: true,
-      unique: true
-    },
     category: {
       type: 'string'
     }

@@ -10,11 +10,6 @@ module.exports = {
   identity:'Items',
   primaryKey: 'id',
   attributes: {
-    id: {
-      type: 'number',
-      autoIncrement: true,
-      unique: true,
-    },
     idProduct: {
       type: 'number',
       columnName: 'id_product'
@@ -26,11 +21,6 @@ module.exports = {
     productPrice: {
       type: 'number',
       columnName: 'product_price'
-    },
-    createdAt : {
-      type: 'number',
-      autoCreatedAt: true,
-      columnName: 'created_at'
     },
     lastProductPrice: {
       type: 'number',
@@ -50,7 +40,7 @@ module.exports = {
     },
 
     //Reference
-   
+
     //one list,many items
     shoppingList: {
       model: 'ShoppingLists'

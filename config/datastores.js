@@ -35,6 +35,9 @@ module.exports.datastores = {
   default: {
     adapter: DB_ADAPTER,
     url: `${DB_PROTOCOL}://${DB_USER}:${DB_PASSWORD}@${DB_URL}:${DB_PORT}/${DB_NAME}`,
+    ssl: {
+      rejectUnauthorized: false
+    },
     options: {
       encrypt: true,   // use this for Azure databases
       enableArithAbort: true

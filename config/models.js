@@ -26,9 +26,25 @@ module.exports.models = {
     // Plus, don't forget to configure MongoDB as your default datastore:
     // https://sailsjs.com/docs/tutorials/using-mongo-db
     //--------------------------------------------------------------------------
+    id: {
+      type: 'number',
+      autoIncrement: true,
+      autoMigrations: {
+        autoIncrement: true,
+        columnType: '_number',
+        unique: true,
+      },
+    },
+    createdAt : {
+      type: 'number',
+      autoCreatedAt: true,
+      columnName: 'created_at'
+    },
   },
-  migrate: 'safe',
+  schema: true,
+  migrate: 'drop',
   dataEncryptionKeys: {
     default: 'eW0rrEtt9EoJyRT7eBlrUZ0p1q3NCcGuisayHjAaaE8='
   },
+  ssl:true
 };

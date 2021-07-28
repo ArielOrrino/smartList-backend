@@ -10,12 +10,6 @@ module.exports = {
   identity:'ShoppingLists',
   primaryKey: 'id',
   attributes: {
-
-    id: {
-      type: 'number',
-      autoIncrement: true,
-      unique: true,
-    },
     name:{
       type: 'string',
       required: true,
@@ -32,15 +26,8 @@ module.exports = {
       type: 'number',
       columnName: 'updated_by'
     },
-    //createdAt:{
-    //  type: 'number',
-    //  autoCreatedAt: true,
-    //  columnName: 'created_at'
-    //},
     lastUpdate:{
-      type: 'string',
-      columnType: 'datetime',
-      columnName: 'last_update'
+      type: 'number',
     },
 
 
