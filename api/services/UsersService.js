@@ -1,3 +1,5 @@
+const moment = require('moment');
+
 module.exports = {
   async findUser({email}) {
     let user;
@@ -25,11 +27,26 @@ module.exports = {
     return Users.find();
   },
 
+  updateLastLogin({email}) {
+    const currentTimestamp = moment().unix();
+    let user;
+    try {
+      user = Users.update({email}).set({lastLogin: currentTimestamp}).fetch();
+    } catch (err) {
+      return {
+        message: err,
+        error: true,
+        code:500,
+      };
+    }
+    delete user.password;
+    return user;
+  },
+
   async createUser({name, lastName, email, password}) {
-    const createdAt = new Date();
     let userCreated;
     try {
-      userCreated = await Users.create({name, lastName, email, password, createdAt}).fetch();
+      userCreated = await Users.create({name, lastName, email, password}).fetch();
     } catch (err) {
       if (err.message.includes('unique_email')) {
         return {

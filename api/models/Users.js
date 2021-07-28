@@ -29,7 +29,7 @@ module.exports = {
       required: true
     },
     lastLogin: {
-      type: 'string',
+      type: 'number',
       columnName: 'last_login'
     },
 

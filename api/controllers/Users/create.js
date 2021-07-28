@@ -10,6 +10,7 @@ module.exports = {
     if (userCreated.error){
       return res.serverError(userCreated);
     }
+    console.log('user created!');
     return res.created(userCreated);
   },
 };
