@@ -45,8 +45,9 @@ module.exports = {
 
   async createUser({name, lastName, email, password}) {
     let userCreated;
+    const currentTimestamp = moment().unix();
     try {
-      userCreated = await Users.create({name, lastName, email, password}).fetch();
+      userCreated = await Users.create({name, lastName, email, password, lastLogin: currentTimestamp }).fetch();
     } catch (err) {
       if (err.message.includes('unique_email')) {
         return {
@@ -63,16 +64,5 @@ module.exports = {
     }
     delete userCreated.password;
     return userCreated;
-
   },
-/*     userCreation = await Users.create({name, lastName, email, password})
-    .intercept('E_UNIQUE', (err)=> {
-      console.log(err);
-      return 'emailAlreadyInUse';
-    });
-    .intercept({name:'UsageError'}, (err)=> {
-      return 'invalid';
-    });
-    return userCreation;
-  } */
 };
