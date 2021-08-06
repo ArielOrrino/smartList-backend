@@ -10,7 +10,7 @@ module.exports = {
   async createItem({idProduct,productName,productPrice,lastProductPrice,productQuantity,idCategory,addedBy}) {
     let itemCreated;
     try {
-      itemCreated = await Items.create({idProduct,productName,productPrice,lastProductPrice,productQuantity,idCategory,addedBy}).fetch();
+      itemCreated = await Items.create({idProduct,productName,productPrice,lastProductPrice,productQuantity,idCategory,addedBy,shoppingList}).fetch();
     } catch (err) {
       return {
         message: 'List couldnt be created',
