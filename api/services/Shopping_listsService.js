@@ -10,10 +10,10 @@ module.exports = {
     return ShoppingLists.find();
   },
 
-  async createShopping_list({createdBy}) {
+  async createShopping_list({name,createdBy}) {
     let listCreated;
     try {
-      listCreated = await ShoppingLists.create({createdBy}).fetch();
+      listCreated = await ShoppingLists.create({name,createdBy}).fetch();
     } catch (err) {
       return {
         message: 'List couldnt be created',
