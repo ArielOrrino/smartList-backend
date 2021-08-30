@@ -7,13 +7,13 @@ module.exports = {
     return Items.find();
   },
 
-  async createItem({idProduct,productName,productPrice,lastProductPrice,productQuantity,idCategory,addedBy}) {
+  async createItem({idProduct,productName,productPrice,lastProductPrice,productQuantity,idCategory,addedBy,shoppingList}) {
     let itemCreated;
     try {
       itemCreated = await Items.create({idProduct,productName,productPrice,lastProductPrice,productQuantity,idCategory,addedBy,shoppingList}).fetch();
     } catch (err) {
       return {
-        message: 'List couldnt be created',
+        message: 'Item couldnt be created',
         error: true,
         code:500,
       };
