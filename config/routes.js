@@ -61,5 +61,6 @@ module.exports.routes = {
   'GET /all-items': 'Items/get-all',
   'GET /item': 'Items/get',
   'POST /item': 'Items/create',
+  'POST /item-edit-product-quantity': 'Items/edit-product-quantity',
 
 };

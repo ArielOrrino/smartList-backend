@@ -22,4 +22,20 @@ module.exports = {
 
   },
 
+  async editProductQuantity({Quantity,id}) {
+    let itemEdited;
+    try {
+      itemEdited = await Items.update({id}).set({productQuantity: Quantity}).fetch();
+    } catch (err) {
+      return {
+        message: 'Item Quantity couldnt be edited',
+        error: true,
+        code:500,
+      };
+    }
+    return itemEdited;
+
+  },
+
+
 };
