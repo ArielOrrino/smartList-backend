@@ -55,6 +55,7 @@ module.exports.routes = {
   'GET /all-shopping-lists': 'Shopping_lists/get-all',
   'GET /shopping-list': 'Shopping_lists/get',
   'POST /shopping-list': 'Shopping_lists/create',
+  'POST /shopping-list-edit-name': 'Shopping_lists/edit-name',
 
   //Items
   'GET /all-items': 'Items/get-all',
