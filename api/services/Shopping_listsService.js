@@ -26,4 +26,20 @@ module.exports = {
 
   },
 
+  async editNameShopping_list({name,id}) {
+    let listEdited;
+    try {
+      listEdited = await ShoppingLists.update({id}).set({name: name}).fetch();
+    } catch (err) {
+      return {
+        message: 'List couldnt be edited',
+        error: true,
+        code:500,
+      };
+    }
+    
+    return listEdited;
+
+  },
+
 };
