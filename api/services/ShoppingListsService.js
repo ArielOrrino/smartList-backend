@@ -7,6 +7,10 @@ module.exports = {
     return ShoppingLists.find();
   },
 
+  findShoppingListByCreator({idCreator}) {
+    return ShoppingLists.find({createdBy: idCreator});
+  },
+
   async createShoppingList({name,createdBy}) {
     let listCreated;
     try {
