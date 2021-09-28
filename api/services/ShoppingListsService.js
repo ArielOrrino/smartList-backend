@@ -1,43 +1,42 @@
-const moment = require('moment');
-const Shopping_lists = require('../models/Shopping_lists');
-
 module.exports = {
-  findShopping_list({id}) {
+  findShoppingList({id}) {
     return ShoppingLists.findOne({id});
   },
 
-  getAllShopping_lists() {
+  getAllShoppingLists() {
     return ShoppingLists.find();
   },
 
-  async createShopping_list({name,createdBy}) {
+  async createShoppingList({name,createdBy}) {
     let listCreated;
     try {
       listCreated = await ShoppingLists.create({name,createdBy}).fetch();
     } catch (err) {
       return {
         message: 'List couldnt be created',
+        errMessage: err,
         error: true,
         code:500,
       };
     }
-    
+
     return listCreated;
 
   },
 
-  async editNameShopping_list({name,id}) {
+  async editNameShoppingList({name,id}) {
     let listEdited;
     try {
       listEdited = await ShoppingLists.update({id}).set({name: name}).fetch();
     } catch (err) {
       return {
         message: 'List couldnt be edited',
+        errMessage: err,
         error: true,
         code:500,
       };
     }
-    
+
     return listEdited;
 
   },

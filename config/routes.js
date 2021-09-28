@@ -52,10 +52,10 @@ module.exports.routes = {
   'POST /user': 'Users/create',
 
   //Shopping lists
-  'GET /all-shopping-lists': 'Shopping_lists/get-all',
-  'GET /shopping-list': 'Shopping_lists/get',
-  'POST /shopping-list': 'Shopping_lists/create',
-  'PATCH /shopping-list': 'Shopping_lists/edit-name',
+  'GET /all-shopping-lists': 'Shopping-lists/get-all',
+  'GET /shopping-list': 'Shopping-lists/get',
+  'POST /shopping-list': 'Shopping-lists/create',
+  'PATCH /shopping-list': 'Shopping-lists/edit-name',
 
   //Items
   'GET /all-items': 'Items/get-all',
