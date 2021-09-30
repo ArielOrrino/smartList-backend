@@ -11,6 +11,19 @@ module.exports = {
     return ShoppingLists.find({createdBy: idCreator});
   },
 
+  remove({id}) {
+    try {
+      return ShoppingLists.destroy({id});
+    } catch (err) {
+      return {
+        message: 'List couldnt be removed',
+        errMessage: err,
+        error: true,
+        code:500,
+      };
+    }
+  },
+
   async createShoppingList({name,createdBy}) {
     let listCreated;
     try {
