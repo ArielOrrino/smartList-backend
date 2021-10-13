@@ -29,13 +29,15 @@ module.exports = {
     } catch (err) {
       return {
         message: 'Item Quantity couldnt be edited',
+        errorMessage: err,
         error: true,
         code:500,
       };
     }
     return itemEdited;
-
   },
 
-
+  findItemsByShoppingList({idList}) {
+    return Items.find({shoppingList: idList});
+  },
 };
