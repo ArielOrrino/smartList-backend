@@ -11,7 +11,7 @@ module.exports = {
   primaryKey: 'id',
   attributes: {
     idProduct: {
-      type: 'number',
+      type: 'string',
       columnName: 'id_product'
     },
     productName: {
