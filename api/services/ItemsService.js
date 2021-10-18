@@ -14,6 +14,7 @@ module.exports = {
     } catch (err) {
       return {
         message: 'Item couldnt be created',
+        errMessage: err,
         error: true,
         code:500,
       };
