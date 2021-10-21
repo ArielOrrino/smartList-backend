@@ -41,4 +41,17 @@ module.exports = {
   findItemsByShoppingList({idList}) {
     return Items.find({shoppingList: idList});
   },
+
+  async remove({id}) {
+    try {
+      await Items.destroy({id});
+    } catch (err) {
+      return {
+        message: 'Item couldnt be removed',
+        errMessage: err,
+        error: true,
+        code:500,
+      };
+    }
+  },
 };
