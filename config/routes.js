@@ -62,6 +62,7 @@ module.exports.routes = {
   //Items
   'GET /all-items': 'Items/get-all',
   'GET /item': 'Items/get',
+  'DELETE /item': 'Items/remove',
   'GET /shopping-list/:idList/items': 'Items/get-by-list',
   'POST /item': 'Items/create',
   'PATCH /item': 'Items/edit-product-quantity',

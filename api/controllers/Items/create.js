@@ -8,7 +8,8 @@ module.exports = {
     if (itemsCreated.error){
       return res.serverError(itemsCreated);
     }
-    return res.created(itemsCreated);
+    const list = await ItemsService.findItemsByShoppingList({idList:shoppingList});
+    return res.created(list);
   },
 };
 
