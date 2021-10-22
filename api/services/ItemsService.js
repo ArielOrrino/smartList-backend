@@ -23,10 +23,10 @@ module.exports = {
 
   },
 
-  async editProductQuantity({Quantity,id}) {
+  async editProductQuantity({quantity,id}) {
     let itemEdited;
     try {
-      itemEdited = await Items.update({id}).set({productQuantity: Quantity}).fetch();
+      itemEdited = await Items.update({id}).set({productQuantity: quantity}).fetch();
     } catch (err) {
       return {
         message: 'Item Quantity couldnt be edited',
