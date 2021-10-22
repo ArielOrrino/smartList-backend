@@ -8,6 +8,7 @@ module.exports = {
       return res.serverError(itemsCreated);
     }
     const list = await ItemsService.findItemsByShoppingList({idList});
-    return res.ok(list);
+    const sortedItems = _.sortBy(list, 'productName');
+    return res.ok(sortedItems);
   },
 };
