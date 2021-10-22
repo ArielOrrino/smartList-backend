@@ -7,6 +7,7 @@ module.exports = {
     if (itemsInList.error){
       return res.serverError(itemsInList);
     }
-    return res.ok(itemsInList);
+    const sortedItems = _.sortBy(itemsInList, 'productName');
+    return res.ok(sortedItems);
   },
 };
