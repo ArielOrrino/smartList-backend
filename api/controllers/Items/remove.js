@@ -4,7 +4,7 @@ module.exports = {
     const {res,req} = env;
     const {id, idList} = req.query;
     const itemRemoved = await ItemsService.remove({id});
-    if (itemRemoved.error){
+    if (itemRemoved && itemRemoved.error){
       return res.serverError(itemsCreated);
     }
     const list = await ItemsService.findItemsByShoppingList({idList});
