@@ -7,6 +7,7 @@ module.exports = {
     if (list && list.error){
       return res.serverError(list);
     }
-    return res.ok(list);
+    const sortedLists = _.sortBy(list, 'name');
+    return res.ok(sortedLists);
   },
 };
