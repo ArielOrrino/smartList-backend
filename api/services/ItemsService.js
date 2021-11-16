@@ -23,6 +23,21 @@ module.exports = {
 
   },
 
+  async updatePrices({productPrice, lastProductPrice, id}) {
+    let itemEdited;
+    try {
+      itemEdited = await Items.update({id}).set({productPrice, lastProductPrice}).fetch();
+    } catch (err) {
+      return {
+        message: 'Item Quantity couldnt be edited',
+        errorMessage: err,
+        error: true,
+        code:500,
+      };
+    }
+    return itemEdited;
+  },
+
   async editProductQuantity({quantity,id}) {
     let itemEdited;
     try {
