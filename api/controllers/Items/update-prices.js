@@ -4,6 +4,9 @@ module.exports = {
     const {res, req} = env;
     const { body } = req;
     const { productPrice, lastProductPrice, id } = body;
+    if (!productPrice||!lastProductPrice|| !id) {
+      return res.badRequest('productPrice, lastProductPrice or id is not being sent');
+    }
     const itemEdited = await ItemsService.updatePrices({productPrice, lastProductPrice, id});
     if (itemEdited.error){
       return res.serverError(itemEdited);
