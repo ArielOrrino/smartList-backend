@@ -1,5 +1,5 @@
 module.exports = {
-  findShoppingList({id}) {
+  async findShoppingList({id}) {
     return ShoppingLists.findOne({id});
   },
 
@@ -37,9 +37,7 @@ module.exports = {
         code:500,
       };
     }
-
     return listCreated;
-
   },
 
   async editNameShoppingList({name,id}) {
@@ -54,9 +52,42 @@ module.exports = {
         code:500,
       };
     }
-
     return listEdited;
-
   },
 
+  findShoppingListSharedTo({id}) {
+    return SharedShoppingListsUsers.find({idUser: id});
+  },
+
+  async shareShoppingList({ toUserId, idList }) {
+    let sharedList = null;
+    try {
+      sharedList = await SharedShoppingListsUsers.create({idUser: toUserId, idShoppingList: idList}).fetch();
+    } catch (err) {
+      return {
+        message: 'List couldnt be shared',
+        errMessage: err,
+        error: true,
+        code:500,
+      };
+    }
+    return sharedList;
+  },
+
+  async findSharedShoppingList({ listOfIds }) {
+    let lists = null;
+    try {
+      lists = Promise.all(listOfIds.map((idList) => {
+        return this.findShoppingList({ id: idList.idShoppingList });
+      }));
+    } catch (err) {
+      return {
+        message: 'Lists couldnt be retrieved',
+        errMessage: err,
+        error: true,
+        code: 500,
+      };
+    }
+    return lists;
+  }
 };
