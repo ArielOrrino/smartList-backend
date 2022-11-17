@@ -23,7 +23,9 @@ module.exports = {
     const {nombre: MuniNombre} =municipio;
     const {nombre: provNombre} =provincia;
     const response = {municipio: MuniNombre,
-      provincia: provNombre};
+      provincia: provNombre
+    };
+    console.log('localizacion obtenida: ', response);
     return res.ok(response);
   },
 };
