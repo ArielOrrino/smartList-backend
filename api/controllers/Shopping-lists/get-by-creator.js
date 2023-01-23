@@ -9,7 +9,6 @@ module.exports = {
       return res.serverError(list);
     }
     const sortedLists = _.sortBy(list, 'name');
-    console.log('listas: ', sortedLists);
     return res.ok(sortedLists);
   },
 };
