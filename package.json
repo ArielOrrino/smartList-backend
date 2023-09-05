@@ -5,9 +5,7 @@
   "description": "a Sails application",
   "keywords": [],
   "dependencies": {
-    "@sailshq/connect-redis": "^3.2.1",
     "@sailshq/lodash": "^3.10.3",
-    "@sailshq/socket.io-redis": "^5.2.0",
     "axios": "^0.21.1",
     "axios-https-proxy-fix": "^0.17.1",
     "dotenv": "^10.0.0",
@@ -25,7 +23,7 @@
     "eslint": "^7.30.0"
   },
   "scripts": {
-    "start": "NODE_ENV=development node app.js"
+    "start": "NODE_ENV=production node app.js"
   },
   "main": "app.js",
   "repository": {
