@@ -20,7 +20,7 @@ module.exports = {
       return res.ok(err);
     }
     // log as debug the error and the response
-    console.debug('data: ', data);
+    console.debug('data: ', data.data);
     console.debug('err: ', err);
 
     const {municipio, provincia} = data.data.ubicacion;

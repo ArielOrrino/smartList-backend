@@ -23,7 +23,7 @@
     "eslint": "^7.30.0"
   },
   "scripts": {
-    "start": "NODE_ENV=production node app.js"
+    "start": "NODE_ENV=development node app.js"
   },
   "main": "app.js",
   "repository": {
