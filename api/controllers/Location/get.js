@@ -1,16 +1,14 @@
+
 module.exports = {
 
   async fn(inputs, exits, env) {
     const { req, res } = env;
-    console.log('entro al request /location/get');
     const { query } = req;
     const { reqId } = res.options;
     const { lat, lon } = query;
-    console.log('parametros recibidos lat:%s, lon:%s', lat, lon);
     const headers = {
-      'user-agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'
+      ...HelperService.getUserAgent()
     };
-    console.log('preparo el request a la api de geolocalizacion');
 
     const axiosParams = {
       url: UrlsService.getLocation(),
