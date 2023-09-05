@@ -19,6 +19,8 @@ module.exports = {
     if (err) {
       return res.ok(err);
     }
+    console.log('data: ', data.data);
+    console.log('error: ', error);
     const {municipio, provincia} = data.data.ubicacion;
     const {nombre: MuniNombre} =municipio;
     const {nombre: provNombre} =provincia;
