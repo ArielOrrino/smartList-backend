@@ -35,7 +35,7 @@ module.exports.models = {
         unique: true,
       },
     },
-    createdAt : {
+    createdAt: {
       type: 'number',
       autoCreatedAt: true,
       columnName: 'created_at'
@@ -46,5 +46,8 @@ module.exports.models = {
   dataEncryptionKeys: {
     default: 'eW0rrEtt9EoJyRT7eBlrUZ0p1q3NCcGuisayHjAaaE8='
   },
-  ssl:true
+  ssl: {
+    sslmode: 'require',
+    rejectUnauthorized: false
+  },
 };

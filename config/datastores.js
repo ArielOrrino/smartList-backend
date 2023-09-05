@@ -12,7 +12,7 @@
  * For more information on configuring datastores, check out:
  * https://sailsjs.com/config/datastores
  */
-const { DB_ADAPTER, DB_PROTOCOL, DB_URL, DB_USER, DB_PASSWORD, DB_PORT, DB_NAME } = process.env;
+const { DB_ADAPTER, DB_PROTOCOL, DB_URL, DB_USER, DB_PASSWORD, DB_PORT, DB_NAME, DB_CONNECTION_STRING } = process.env;
 
 module.exports.datastores = {
 
@@ -34,13 +34,15 @@ module.exports.datastores = {
   ***************************************************************************/
   default: {
     adapter: DB_ADAPTER,
-    url: `${DB_PROTOCOL}://${DB_USER}:${DB_PASSWORD}@${DB_URL}:${DB_PORT}/${DB_NAME}`,
+    url: `${DB_CONNECTION_STRING}`,
     ssl: {
+      sslmode: 'require',
       rejectUnauthorized: false
     },
+    max: 1,
     options: {
-      encrypt: true,   // use this for Azure databases
-      enableArithAbort: true
+      //encrypt: true,   // use this for Azure databases
+      //enableArithAbort: true,
     }
   },
 };

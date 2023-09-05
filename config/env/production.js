@@ -71,10 +71,10 @@ module.exports = {
       *                                                                           *
       ****************************************************************************/
       ssl: true,
-      adapter: 'sails-mssql',
-      url: 'mssql://smartuser:Qaz11Qaz@smartlist2.database.windows.net:1433/smartlistdb',
+      adapter: 'sails-postgresql',
+      url: 'postgres://fl0user:6EBixRIPqG9l@ep-morning-haze-30401132.us-east-2.aws.neon.tech:5432/cheapeate-db?sslmode=require',
       options: {
-        encrypt: true,   // use this for Azure databases
+        //encrypt: true,   // use this for Azure databases
         enableArithAbort: true
       }
     },

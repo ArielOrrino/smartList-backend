@@ -19,8 +19,7 @@
     "sails-hook-grunt": "^4.0.0",
     "sails-hook-orm": "^3.0.1",
     "sails-hook-sockets": "^2.0.0",
-    "sails-mssql": "^2.1.6",
-    "sails-postgresql": "^2.0.0"
+    "sails-postgresql": "^5.0.1"
   },
   "devDependencies": {
     "eslint": "^7.30.0"
@@ -36,6 +35,6 @@
   "author": "ariel",
   "license": "",
   "engines": {
-    "node": "^12.18"
+    "node": "^16.20.0"
   }
 }
