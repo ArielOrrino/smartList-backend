@@ -23,6 +23,15 @@ module.exports = {
     console.debug('data: ', data.data);
     console.debug('err: ', err);
 
+    console.info('data: ', data.data);
+    console.info('err: ', err);
+
+    console.warn('data: ', data.data);
+    console.warn('err: ', err);
+
+    console.error('data: ', data.data);
+    console.error('err: ', err);
+
     const {municipio, provincia} = data.data.ubicacion;
     const {nombre: MuniNombre} =municipio;
     const {nombre: provNombre} =provincia;
