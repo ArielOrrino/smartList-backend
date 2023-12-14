@@ -72,7 +72,7 @@ module.exports = {
       ****************************************************************************/
       ssl: true,
       adapter: 'sails-postgresql',
-      url: 'postgres://fl0user:6EBixRIPqG9l@ep-morning-haze-30401132.us-east-2.aws.neon.tech:5432/cheapeate-db?sslmode=require',
+      url: 'sails-postgresql://postgres:1e24F4c--C65g6FBfAeGF3GfdGAD*FAC@roundhouse.proxy.rlwy.net:26330/railway?sslmode=require',
       options: {
         //encrypt: true,   // use this for Azure databases
         enableArithAbort: true
