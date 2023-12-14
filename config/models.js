@@ -47,7 +47,6 @@ module.exports.models = {
     default: 'eW0rrEtt9EoJyRT7eBlrUZ0p1q3NCcGuisayHjAaaE8='
   },
   ssl: {
-    sslmode: 'require',
     rejectUnauthorized: false
   },
 };

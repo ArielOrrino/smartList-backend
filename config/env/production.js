@@ -70,9 +70,8 @@ module.exports = {
       * https://sailsjs.com/config/datastores                                     *
       *                                                                           *
       ****************************************************************************/
-      ssl: true,
       adapter: 'sails-postgresql',
-      url: 'sails-postgresql://postgres:1e24F4c--C65g6FBfAeGF3GfdGAD*FAC@roundhouse.proxy.rlwy.net:26330/railway?sslmode=require',
+      url: 'postgresql://postgres:1e24F4c--C65g6FBfAeGF3GfdGAD*FAC@roundhouse.proxy.rlwy.net:26330/railway',
       options: {
         //encrypt: true,   // use this for Azure databases
         enableArithAbort: true

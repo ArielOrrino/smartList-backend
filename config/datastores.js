@@ -36,7 +36,6 @@ module.exports.datastores = {
     adapter: DB_ADAPTER,
     url: `${DB_CONNECTION_STRING}`,
     ssl: {
-      sslmode: 'require',
       rejectUnauthorized: false
     },
     max: 1,
