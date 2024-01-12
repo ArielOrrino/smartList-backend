@@ -42,7 +42,7 @@ module.exports.models = {
     },
   },
   schema: true,
-  migrate: 'alter',
+  migrate: 'safe',
   dataEncryptionKeys: {
     default: 'eW0rrEtt9EoJyRT7eBlrUZ0p1q3NCcGuisayHjAaaE8='
   },
