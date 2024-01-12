@@ -39,7 +39,7 @@ module.exports.datastores = {
       rejectUnauthorized: false
     },
     options: {
-      encrypt: true,   // use this for Azure databases
+      encrypt: false,   // use this for Azure databases
       enableArithAbort: true
     }
   },

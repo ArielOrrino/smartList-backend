@@ -70,13 +70,6 @@ module.exports = {
       * https://sailsjs.com/config/datastores                                     *
       *                                                                           *
       ****************************************************************************/
-      ssl: true,
-      adapter: 'sails-mssql',
-      url: 'mssql://smartuser:Qaz11Qaz@smartlist2.database.windows.net:1433/smartlistdb',
-      options: {
-        encrypt: true,   // use this for Azure databases
-        enableArithAbort: true
-      }
     },
   },
 
@@ -94,7 +87,7 @@ module.exports = {
     * https://sailsjs.com/docs/concepts/models-and-orm/model-settings#?migrate *
     *                                                                          *
     ***************************************************************************/
-    migrate: 'safe',
+    migrate: 'alter',
 
     /***************************************************************************
     *                                                                          *
