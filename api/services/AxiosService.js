@@ -1,16 +1,12 @@
-const axios = require('axios-https-proxy-fix');
+const axios = require('axios');
 const qs = require('qs');
 
 const HEADERS = { 'Content-Type': 'application/json' };
 
 const paramsSerializer = (rawParams) => qs.stringify(rawParams, { arrayFormat: 'comma' });
 
-const PROXY_URL='195.55.94.74';
-const PROXY_PORT='8080';
-const proxy = { host: PROXY_URL, port: PROXY_PORT};
-
 module.exports = {
-  async get(axiosParams, useProxy=false) {
+  async get(axiosParams) {
     const {
       url, params, reqId, headers,
     } = axiosParams;
