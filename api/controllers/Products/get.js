@@ -7,7 +7,7 @@ module.exports = {
       const { reqId } = res.options;
       const { productId, sucursalesString, limit = 50, finalList=null } = query;
       const headers = HeadersService.createHeaders();
-      let arraySucursales = JSON.parse(sucursalesString);
+      let arraySucursales = sucursalesString.split(',');
       const axiosParams = {
         url: UrlsService.getProducts(),
         reqId,
