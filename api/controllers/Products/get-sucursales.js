@@ -19,8 +19,9 @@ module.exports = {
       },
     };
     const [err, data] = await ToService.promiseToAsync(AxiosService.get(axiosParams));
-    if (err || data.status !== 200) {
-      return res.ok(err);
+    if (err || data.status !== 200 || !data.data.sucursales) {
+      const errorResponse = err || data.data;
+      return res.ok(errorResponse);
     }
     const sucursales = SucursalesService.filterSucursales(data.data.sucursales);
     return res.ok(sucursales);
