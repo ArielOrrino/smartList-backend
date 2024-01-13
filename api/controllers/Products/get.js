@@ -5,13 +5,9 @@ module.exports = {
       const { req, res } = env;
       const { query } = req;
       const { reqId } = res.options;
-      const { productId, sucursalesString, limit = 50, distancia=null, finalList=null } = query;
+      const { productId, sucursalesString, limit = 50, finalList=null } = query;
       const headers = HeadersService.createHeaders();
       let arraySucursales = JSON.parse(sucursalesString);
-      if (distancia) {
-        const sucursalesParsed = JSON.parse(sucursalesString);
-        arraySucursales = SucursalesService.findSucursales({ sucursalesParsed, distancia });
-      }
       const axiosParams = {
         url: UrlsService.getProducts(),
         reqId,
