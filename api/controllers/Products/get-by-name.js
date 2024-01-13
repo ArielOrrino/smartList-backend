@@ -6,10 +6,10 @@ module.exports = {
       const { req, res } = env;
       const { query } = req;
       const { reqId } = res.options;
-      const { productName, arraySucursales, distancia } = query;
+      const { productName, stringSucursales } = query;
       const limit = 50;
       const headers = HeadersService.createHeaders();
-      const sucursalesParsed = JSON.parse(arraySucursales);
+      const arraySucursales = stringSucursales.split(',');
       const axiosParams = {
         url: UrlsService.getProductsByName(),
         reqId,
@@ -17,7 +17,7 @@ module.exports = {
         params: {
           string: productName,
           // eslint-disable-next-line camelcase
-          array_sucursales: SucursalesService.findSucursales({ sucursalesParsed, distancia }),
+          array_sucursales: arraySucursales,
           offset: 0,
           sort: '-cant_sucursales_disponible',
           limit,
