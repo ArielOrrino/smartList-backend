@@ -2,7 +2,7 @@ const cloudfrontServer = 'https://d3e6htiiul5ek9.cloudfront.net';
 const locationServer = 'https://apis.datos.gob.ar';
 
 module.exports = {
-  getProduct() {
+  getProducts() {
     const segment = `/prod/producto`;
     return `${cloudfrontServer}${segment}`;
   },

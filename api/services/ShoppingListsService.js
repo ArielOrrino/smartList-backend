@@ -58,5 +58,4 @@ module.exports = {
     return listEdited;
 
   },
-
 };

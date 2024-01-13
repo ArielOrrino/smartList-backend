@@ -8,7 +8,7 @@ module.exports = {
   createHeaders(headers = {}) {
     return {
       ...headers,
-      ...HeaderService.addUserAgentHeader(),
+      ...HeadersService.addUserAgentHeader(),
       'Content-Type': 'application/json',
     };
   }
