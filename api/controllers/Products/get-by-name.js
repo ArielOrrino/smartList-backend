@@ -6,10 +6,10 @@ module.exports = {
       const { req, res } = env;
       const { query } = req;
       const { reqId } = res.options;
-      const { productName, sucursalesString, distancia } = query;
+      const { productName, arraySucursales, distancia } = query;
       const limit = 50;
       const headers = HeadersService.createHeaders();
-      const sucursalesParsed = JSON.parse(sucursalesString);
+      const sucursalesParsed = JSON.parse(arraySucursales);
       const axiosParams = {
         url: UrlsService.getProductsByName(),
         reqId,
