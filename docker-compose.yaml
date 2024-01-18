@@ -10,9 +10,11 @@ services:
     ports:
       - "1337:1337"
     networks:
-      - my-custom-network
+      - cheapeate_network
 
 networks:
-  my-custom-network:
-    external: true
-    ip_address: 172.21.0.2
+  cheapeate_network:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.21.0.0/16
