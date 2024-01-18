@@ -81,8 +81,8 @@ RUN addgroup -g 1000 node \
 
 RUN apk add --no-cache git
 WORKDIR /app
-COPY .  .
-ADD /.env.prod /.env
+COPY .  /app
+COPY /.env.prod /app/.env
 
 COPY deployment/docker/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
