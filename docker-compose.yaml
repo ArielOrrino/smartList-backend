@@ -9,3 +9,4 @@ services:
     container_name: cheapeate-api
     ports:
       - "1337:1337"
+    ip: "172.21.0.2"
