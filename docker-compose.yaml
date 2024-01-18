@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  cheapeate-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    container_name: cheapeate-api
+    ports:
+      - "1337:1337"
