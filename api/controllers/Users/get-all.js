@@ -1,8 +1,12 @@
 module.exports = {
 
   async fn(inputs, exits, env) {
-    const {res} = env;
-    const users = await UsersService.getAllUsers();
-    return res.ok(users);
+    const { res } = env;
+    try {
+      const users = await UsersService.getAllUsers();
+      return res.ok(users);
+    } catch (error) {
+      return res.serverError(error);
+    }
   },
 };

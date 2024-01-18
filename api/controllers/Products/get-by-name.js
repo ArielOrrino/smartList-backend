@@ -2,8 +2,8 @@ module.exports = {
 
 
   async fn(inputs, exits, env) {
+    const { req, res } = env;
     try {
-      const { req, res } = env;
       const { query } = req;
       const { reqId } = res.options;
       const { productName, stringSucursales } = query;
@@ -25,11 +25,11 @@ module.exports = {
       };
       const [err, data] = await ToService.promiseToAsync(AxiosService.get(axiosParams));
       if (err) {
-        return res.ok(err);
+        return res.serverError(err);
       }
       return res.ok(data.data);
     } catch (error) {
-      return res.ok(error);
+      return res.serverError(error);
     }
   },
 };
