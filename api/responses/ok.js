@@ -3,7 +3,6 @@ module.exports = function (data) {
   const { req, res } = this;
   res.status(200);
   res.type('application/json');
-  const timestamp = new Date().toISOString();
-  console.log('Requested::', timestamp, req.method, req.url, res.statusCode);
+  console.log('Requested :: ', req.method, req.url, res.statusCode);
   return res.json(data);
 };
