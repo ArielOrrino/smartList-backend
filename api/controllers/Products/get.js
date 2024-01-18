@@ -1,8 +1,8 @@
 module.exports = {
 
   async fn(inputs, exits, env) {
+    const { req, res } = env;
     try {
-      const { req, res } = env;
       const { query } = req;
       const { reqId } = res.options;
       const { productId, sucursalesString, limit = 50, finalList=null } = query;
@@ -25,7 +25,7 @@ module.exports = {
       };
       const [err, data] = await ToService.promiseToAsync(AxiosService.get(axiosParams));
       if (err) {
-        return res.ok(err);
+        return res.serverError(err);
       }
       const { sucursales: sucursalesResponse, sucursalesConProducto, producto } = data.data;
       const sucursalesFiltradas = sucursalesResponse.filter((sucursal) => !sucursal.message);
@@ -50,7 +50,7 @@ module.exports = {
       const priceByMarketFiltered = priceByMarket.filter((prices) => prices.price);
       return res.ok({ producto, priceByMarketFiltered });
     } catch (error) {
-      return res.ok(error);
+      return res.serverError(error);
     }
   }
 };
