@@ -11,7 +11,6 @@ set -e
 #exec "$@"
 
 npm install
-watch -n 0 "docker logs cheapeate-api" >> cheapeate.logs
 npm run start:prod
 
 
