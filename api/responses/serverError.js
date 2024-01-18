@@ -5,7 +5,8 @@ module.exports = function (data) {
   res.status(errorCode);
   res.type('application/json');
   console.log('******************LOGGING ERROR*************************');
-  console.log('Requested :: ', req.method, req.url, errorCode);
+  const timestamp = new Date().toISOString();
+  console.log('Requested::', timestamp, req.method, req.url, errorCode);
   if (req.body) {
     console.log('body: ', req.body);
   }

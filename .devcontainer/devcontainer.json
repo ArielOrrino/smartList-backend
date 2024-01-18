@@ -1,0 +1,38 @@
+{
+  "name": "cheapeate-api",
+  // Sets the run context to one level up instead of the .devcontainer folder.
+  "context": "..",
+  // Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
+  "dockerFile": "../Dockerfile",
+  "mounts": [
+    "source=/opt/files,target=/opt/files,type=bind,consistency=consistent"
+  ],
+  "customizations": {
+    "vscode": {
+      // Set *default* container specific settings.json values on container create.
+      "settings": {
+        "window.title": "cheapeate-api",
+        "workbench.colorCustomizations": {
+          "editorRuler.foreground": "#ff4081",
+          "titleBar.activeBackground": "#ffff00",
+          "titleBar.activeForeground": "#1f1e1e"
+        },
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file"
+      },
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": [
+        "ms-vscode-remote.vscode-remote-extensionpack",
+        "editorconfig.editorconfig",
+        "ms-azuretools.vscode-docker",
+        "GitHub.copilot",
+        "ms-vscode-remote.remote-containers",
+        "eamodio.gitlens"
+      ]
+    }
+  },
+  "postCreateCommand": "echo 'Container is ready'",
+  "runArgs": [
+    "--network=host"
+  ]
+}
