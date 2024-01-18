@@ -135,4 +135,4 @@ node_modules/*
 
 .editorconfig
 .env
-.env-prod
+.env.*
