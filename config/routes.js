@@ -36,6 +36,8 @@ module.exports.routes = {
   // Products
   'GET /products': 'Products/get',
   'GET /products/by-name': 'Products/get-by-name',
+  'GET /v2/products': 'V2/Products/get',
+  'GET /v2/products/by-name': 'V2/Products/get-by-name',
 
   // Sucursales
   'GET /sucursales': 'Products/get-sucursales',
