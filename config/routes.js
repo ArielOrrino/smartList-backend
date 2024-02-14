@@ -60,6 +60,8 @@ module.exports.routes = {
   'POST /shopping-list': 'Shopping-lists/create',
   'PATCH /shopping-list': 'Shopping-lists/edit-name',
   'DELETE /shopping-list': 'Shopping-lists/remove',
+  'POST /shopping-list/share': 'Shopping-lists/share',
+  'GET /v2/shopping-list/by-creator': 'V2/Shopping-lists/get-by-creator',
 
   //Items
   'GET /all-items': 'Items/get-all',
