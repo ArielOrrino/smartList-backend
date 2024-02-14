@@ -73,7 +73,7 @@ module.exports = {
 
   async findSharedShoppingListToUser({ idCreator }) {
     try {
-      const sharedLists = await SharedShoppingListsUsers.find(idUser = idCreator);
+      const sharedLists = await SharedShoppingListsUsers.find({ idUser: idCreator });
       let completeSharedList = [];
       if (sharedLists.length === 0) {
         return completeSharedList;
