@@ -5,47 +5,49 @@ module.exports = {
     try {
       const { query } = req;
       const { reqId } = res.options;
-      const { productName, stringSucursales } = query;
-      const limit = 50;
+      const { productName = '', stringSucursales } = query;
+      // offset is -100 because for the first request we want to start from zero
+      let offset = -100;
       const headers = HeadersService.createHeaders();
       const arraySucursales = stringSucursales.split(',');
+      let productos = [];
       const splited_name = productName.split(' ');
       let new_search = splited_name[0];
       while (splited_name.length > 0 && AVOID_WORDS.includes(new_search.toLowerCase())) {
         splited_name.shift();
         new_search = splited_name[0];
       }
-      if (splited_name.length === 0) {
+      if (splited_name.length === 0 || new_search === '') {
         return res.ok({ productos: [], total: 0 });
       }
-      let axiosParams = {
-        url: UrlsService.getProductsByName(),
-        reqId,
-        headers,
-        params: {
-          string: new_search,
-          // eslint-disable-next-line camelcase
-          array_sucursales: arraySucursales,
-          offset: 0,
-          sort: '-cant_sucursales_disponible',
-          limit,
-        },
-      };
-      const [err, data] = await ToService.promiseToAsync(AxiosService.get(axiosParams));
-      if (err) {
-        return res.serverError(err);
+      let iteration = 0;
+      let iterationMax = 0;
+      while (iteration === 0 || iteration < iterationMax) {
+        offset = iteration === 0 ? 0 : offset + 99;
+        const target_products = await ProductsService.getProductsByNameFromPC({
+          name: new_search,
+          sucursales: arraySucursales,
+          offset,
+          headers,
+          reqId,
+          res,
+        });
+        if (target_products.error) {
+          return res.serverError(target_products);
+        }
+        productos = productos.concat(ProductsService.translateProductsByName(target_products.data.productos));
+        iterationMax = Math.ceil(target_products.data.total / 100);
+        iteration += 1;
       }
-      productos = ProductsService.translateProductsByName(data.data.productos);
-      total = productos.length;
+
       splited_name.shift();
       splited_name.forEach(name => {
         productos = productos.filter((producto) => producto.nombre.toLowerCase().includes((name + ' ').toLowerCase()));
-        total = productos.length;
       })
 
       const response = {
         productos,
-        total
+        total: productos.length,
       };
       return res.ok(response);
     } catch (error) {

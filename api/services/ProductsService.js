@@ -37,5 +37,24 @@ module.exports = {
         localidad,
       };
     });
-  }
+  },
+  async getProductsByNameFromPC({ name, sucursales, offset = 0, headers, reqId, res }) {
+    let axiosParams = {
+      url: UrlsService.getProductsByName(),
+      reqId,
+      headers,
+      params: {
+        string: name,
+        array_sucursales: sucursales,
+        offset,
+        sort: '-cant_sucursales_disponible',
+        limit: 100,
+      },
+    };
+    const [err, data] = await ToService.promiseToAsync(AxiosService.get(axiosParams));
+    if (err) {
+      return res.serverError(err);
+    }
+    return data;
+  },
 };
